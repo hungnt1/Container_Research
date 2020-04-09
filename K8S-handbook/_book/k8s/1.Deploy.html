@@ -1,0 +1,641 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Cài đặt K8S 1.18 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.architecture.html" />
+    
+    
+    <link rel="prev" href="../cloudnative/define.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Cloud Native</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../cloudnative/define.html">
+            
+                <a href="../cloudnative/define.html">
+            
+                    
+                    Define Cloud Native
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Kubernetes 1.18</li>
+        
+        
+    
+        <li class="chapter active" data-level="3.1" data-path="1.Deploy.html">
+            
+                <a href="1.Deploy.html">
+            
+                    
+                    Cài đặt K8S 1.18
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="2.architecture.html">
+            
+                <a href="2.architecture.html">
+            
+                    
+                    Kiến trúc trong Kubernetes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Cài đặt K8S 1.18</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="c&#xE0;i-&#x111;&#x1EB7;t-kubernetest-118">C&#xE0;i &#x111;&#x1EB7;t Kubernetest 1.18</h2>
+<h2 id="chu&#x1EA9;n-b&#x1ECB;-m&#xF4;i-tr&#x1B0;&#x1EDD;ng-&#x111;&#x1EC3;-c&#xE0;i-&#x111;&#x1EB7;t">Chu&#x1EA9;n b&#x1ECB; m&#xF4;i tr&#x1B0;&#x1EDD;ng &#x111;&#x1EC3; c&#xE0;i &#x111;&#x1EB7;t</h2>
+<ul>
+<li>&#x110;&#x1EC3; chu&#x1EA9;n b&#x1ECB; c&#xE0;i &#x111;&#x1EB7;t Kubeneste c&#x1EA7;n chu&#x1EA9;n b&#x1ECB; m&#xF4;i tr&#x1B0;&#x1EDD;ng sau:<ul>
+<li>3 m&#xE1;y &#x1EA3;o ( m&#xE1;y &#x1EA3;o ) c&#xF3; &#xED;t nh&#x1EA5;t 8GB RAM , 8 CPU </li>
+<li>H&#x1EC7; &#x111;i&#x1EC1;u h&#xE0;nh s&#x1EED; d&#x1EE5;ng Centos 7. </li>
+<li>Phi&#x1EC3;n b&#x1EA3;n Kube s&#x1EE7; d&#x1EE5;ng 1.18</li>
+</ul>
+</li>
+</ul>
+<h2 id="cluster">Cluster</h2>
+<ul>
+<li>C&#x1EA5;u h&#xEC;nh IP, Hostname c&#x1EE7;a c&#xE1;c node theo m&#xF4; h&#xEC;nh</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Node Name</th>
+<th>Compoment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.10.203.33</td>
+<td>master1</td>
+<td>kube-apiserver&#x3001;kube-controller-manager&#x3001;kube-scheduler&#x3001;etcd&#x3001;kubelet&#x3001;docker&#x3001;calio&#x3001;dashboard</td>
+</tr>
+<tr>
+<td>10.10.203.34</td>
+<td>worker1</td>
+<td>kubelet&#x3001;docker&#x3001;calio&#x3001;traefik</td>
+</tr>
+<tr>
+<td>10.10.203.35</td>
+<td>workeer2</td>
+<td>kubelet&#x3001;docker&#x3001;calio</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Ngo&#xE0;i ra c&#x1EA7;n th&#xEA;m 2 th&#xF4;ng s&#x1ED1; sau : Container IP range: 10.20.0.0/16 </li>
+</ul>
+<h2 id="c&#xE0;i-&#x111;&#x1EB7;t-kubernetest-tr&#xEA;n-centos-7">C&#xE0;i &#x111;&#x1EB7;t Kubernetest tr&#xEA;n Centos 7</h2>
+<h2 id="1-th&#x1EF1;c-hi&#x1EC7;n-setup-hostname-firewalld-v&#xE0;-selinux">1. Th&#x1EF1;c hi&#x1EC7;n setup hostname, FirewallD v&#xE0; SeLinux</h2>
+<ul>
+<li>C&#x1EA5;u h&#xEC;nh Hostname</li>
+</ul>
+<pre><code>hostnamectl set-hostname master
+hostnamectl set-hostname worker1
+hostnamectl set-hostname worker2
+</code></pre><ul>
+<li>C&#x1EA5;u h&#xEC;nh hostname tr&#xEA;n c&#xE1;c node</li>
+</ul>
+<pre><code>cat &lt;&lt;EOF&gt; /etc/hosts
+127.0.0.1 maste1 127.0.0.1 @@ master
+127.0.0.1 worker1 127.0.0.1 @@ worker
+127.0.0.1 worker2 127.0.0.1 @@ worker
+10.10.203.33 master1
+10.10.203.41 worker1
+EOF
+</code></pre><ul>
+<li>Th&#x1EF1;c hi&#x1EC7;n disable SeLinux</li>
+</ul>
+<pre><code>setenforce 0
+sed -i --follow-symlinks &apos;s/SELINUX=enforcing/SELINUX=disabled/g&apos; /etc/sysconfig/selinux
+</code></pre><ul>
+<li>C&#x1EA5;u h&#xEC;nh IPtable</li>
+</ul>
+<pre><code class="lang-bash">modprobe br_netfilter
+
+cat &lt;&lt;EOF &gt; /etc/sysctl.d/k8s.conf
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sysctl --system
+</code></pre>
+<h2 id="2-c&#xE0;i-&#x111;&#x1EB7;t-tr&#xEA;n-control-plane-node">2. C&#xE0;i &#x111;&#x1EB7;t tr&#xEA;n Control Plane Node</h2>
+<ul>
+<li>C&#xE0;i &#x111;&#x1EB7;t m&#xF4;i tr&#x1B0;&#x1EDD;ng Runtime ( Docker )</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-comment"># Install Docker CE</span>
+<span class="hljs-comment">## Set up the repository</span>
+<span class="hljs-comment">### Install required packages.</span>
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+<span class="hljs-comment">### Add Docker repository.</span>
+yum-config-manager --add-repo \
+  https://download.docker.com/linux/centos/docker-ce.repo
+
+<span class="hljs-comment">## Install Docker CE.</span>
+yum update -y &amp;&amp; yum install -y \
+  containerd.io-1.2.13 \
+  docker-ce-19.03.8 \
+  docker-ce-cli-19.03.8
+
+<span class="hljs-comment">## Create /etc/docker directory.</span>
+mkdir /etc/docker
+
+<span class="hljs-comment"># Setup daemon.</span>
+cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
+{
+  <span class="hljs-string">&quot;exec-opts&quot;</span>: [<span class="hljs-string">&quot;native.cgroupdriver=systemd&quot;</span>],
+  <span class="hljs-string">&quot;log-driver&quot;</span>: <span class="hljs-string">&quot;json-file&quot;</span>,
+  <span class="hljs-string">&quot;log-opts&quot;</span>: {
+    <span class="hljs-string">&quot;max-size&quot;</span>: <span class="hljs-string">&quot;100m&quot;</span>
+  },
+  <span class="hljs-string">&quot;storage-driver&quot;</span>: <span class="hljs-string">&quot;overlay2&quot;</span>,
+  <span class="hljs-string">&quot;storage-opts&quot;</span>: [
+    <span class="hljs-string">&quot;overlay2.override_kernel_check=true&quot;</span>
+  ]
+}
+EOF
+
+mkdir -p /etc/systemd/system/docker.service.d
+
+<span class="hljs-comment"># Restart Docker</span>
+systemctl daemon-reload
+systemctl restart docker
+systemctl start docker kubelet
+systemctl <span class="hljs-built_in">enable</span> docker kubelet
+</code></pre>
+<ul>
+<li>Ki&#x1EC3;m tra cgroup</li>
+</ul>
+<pre><code>docker info | grep -i cgroup
+ Cgroup Driver: systemd
+</code></pre><ul>
+<li>C&#x1EA5;u h&#xEC;nh FirewallD</li>
+</ul>
+<pre><code>firewall-cmd --permanent --add-port=6443/tcp
+firewall-cmd --permanent --add-port=2379-2380/tcp
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10251/tcp
+firewall-cmd --permanent --add-port=10252/tcp
+firewall-cmd &#x2013;reload
+</code></pre><ul>
+<li>C&#x1EA5;u h&#xEC;nh Kubernest Repository</li>
+</ul>
+<pre><code class="lang-bash">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+exclude=kubelet kubeadm kubectl
+EOF
+</code></pre>
+<ul>
+<li>C&#xE0;i &#x111;&#x1EB7;t kubeadm kubectl</li>
+</ul>
+<pre><code class="lang-bash">yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+
+systemctl <span class="hljs-built_in">enable</span> --now kubelet
+</code></pre>
+<ul>
+<li>Th&#x1EF1;c hi&#x1EC7;n init cluster. Sau &#x111;&#xF3; l&#x1B0;u &#x111;o&#x1EA1;n m&#xE3; &#x111;&#x1EC3; register, s&#x1EBD; s&#x1EED; d&#x1EE5;ng &#x111;&#x1EC3; register d&#x1B0;&#x1EDB;i c&#xE1;c node</li>
+</ul>
+<pre><code class="lang-bash">kubeadm init --apiserver-advertise-address=10.10.203.33 --pod-network-cidr=10.20.0.0/16 -v=9
+</code></pre>
+<p>Trong &#x111;&#xF3; : - apiserver-advertise-address l&#xE0; &#x111;&#x1B0;&#x1EDD;ng managment - pod-network-cid: l&#xE0; m&#x1EA1;ng &#x111;&#x1EC3; c&#xE1;c Pods li&#xEA;n h&#x1EC7; v&#x1EDB;i nhau d&#x1EA1;ng internal ( kh&#xF4;ng n&#xEA;n tr&#xF9;ng m&#x1EA1;ng n&#xE0;o v&#x1EDB;i host v&#xE0; h&#x1EA1; t&#x1EA7;ng v&#x1EAD;t l&#xFD; &#x1EDF; ngo&#xE0;i )</p>
+<pre><code>W0405 00:29:01.811250   18622 configset.go:202] WARNING: kubeadm cannot validate component configs for API groups [kubelet.config.k8s.io kubeproxy.config.k8s.io]
+[init] Using Kubernetes version: v1.18.0
+[preflight] Running pre-flight checks
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using &apos;kubeadm config images pull&apos;
+[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
+[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
+[kubelet-start] Starting the kubelet
+[certs] Using certificateDir folder &quot;/etc/kubernetes/pki&quot;
+[certs] Generating &quot;ca&quot; certificate and key
+[certs] Generating &quot;apiserver&quot; certificate and key
+[certs] apiserver serving cert is signed for DNS names [master1 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.10.203.33]
+[certs] Generating &quot;apiserver-kubelet-client&quot; certificate and key
+[certs] Generating &quot;front-proxy-ca&quot; certificate and key
+[certs] Generating &quot;front-proxy-client&quot; certificate and key
+[certs] Generating &quot;etcd/ca&quot; certificate and key
+[certs] Generating &quot;etcd/server&quot; certificate and key
+[certs] etcd/server serving cert is signed for DNS names [master1 localhost] and IPs [10.10.203.33 127.0.0.1 ::1]
+[certs] Generating &quot;etcd/peer&quot; certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [master1 localhost] and IPs [10.10.203.33 127.0.0.1 ::1]
+[certs] Generating &quot;etcd/healthcheck-client&quot; certificate and key
+[certs] Generating &quot;apiserver-etcd-client&quot; certificate and key
+[certs] Generating &quot;sa&quot; key and public key
+[kubeconfig] Using kubeconfig folder &quot;/etc/kubernetes&quot;
+[kubeconfig] Writing &quot;admin.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;kubelet.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;controller-manager.conf&quot; kubeconfig file
+[kubeconfig] Writing &quot;scheduler.conf&quot; kubeconfig file
+[control-plane] Using manifest folder &quot;/etc/kubernetes/manifests&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-apiserver&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-controller-manager&quot;
+W0405 00:29:19.044012   18622 manifests.go:225] the default kube-apiserver authorization-mode is &quot;Node,RBAC&quot;; using &quot;Node,RBAC&quot;
+[control-plane] Creating static Pod manifest for &quot;kube-scheduler&quot;
+W0405 00:29:19.044934   18622 manifests.go:225] the default kube-apiserver authorization-mode is &quot;Node,RBAC&quot;; using &quot;Node,RBAC&quot;
+[etcd] Creating static Pod manifest for local etcd in &quot;/etc/kubernetes/manifests&quot;
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory &quot;/etc/kubernetes/manifests&quot;. This can take up to 4m0s
+ [kubelet-check] Initial timeout of 40s passed.
+[apiclient] All control plane components are healthy after 57.032624 seconds
+[upload-config] Storing the configuration used in ConfigMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace
+[kubelet] Creating a ConfigMap &quot;kubelet-config-1.18&quot; in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node master1 as control-plane by adding the label &quot;node-role.kubernetes.io/master=&apos;&apos;&quot;
+[mark-control-plane] Marking the node master1 as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: fda9nx.fmzacmqdvn3hmhj1
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to get nodes
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the &quot;cluster-info&quot; ConfigMap in the &quot;kube-public&quot; namespace
+[kubelet-finalize] Updating &quot;/etc/kubernetes/kubelet.conf&quot; to point to a rotatable kubelet client certificate and key
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 10.10.203.33:6443 --token fda9nx.fmzacmqdvn3hmhj1 \
+    --discovery-token-ca-cert-hash sha256:750ae2309df90b3abaa526794d625fc2b6288005ff455edeb1a8c9f78607807d
+</code></pre><h2 id="3-tr&#xEA;n-c&#xE1;c-worker-node">3. Tr&#xEA;n c&#xE1;c Worker node</h2>
+<ul>
+<li>C&#xE0;i &#x111;&#x1EB7;t m&#xF4;i tr&#x1B0;&#x1EDD;ng Runtime ( Docker )</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-comment"># Install Docker CE</span>
+<span class="hljs-comment">## Set up the repository</span>
+<span class="hljs-comment">### Install required packages.</span>
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+<span class="hljs-comment">### Add Docker repository.</span>
+yum-config-manager --add-repo \
+  https://download.docker.com/linux/centos/docker-ce.repo
+
+<span class="hljs-comment">## Install Docker CE.</span>
+yum update -y &amp;&amp; yum install -y \
+  containerd.io-1.2.13 \
+  docker-ce-19.03.8 \
+  docker-ce-cli-19.03.8
+
+<span class="hljs-comment">## Create /etc/docker directory.</span>
+mkdir /etc/docker
+
+<span class="hljs-comment"># Setup daemon.</span>
+cat &gt; /etc/docker/daemon.json &lt;&lt;EOF
+{
+  <span class="hljs-string">&quot;exec-opts&quot;</span>: [<span class="hljs-string">&quot;native.cgroupdriver=systemd&quot;</span>],
+  <span class="hljs-string">&quot;log-driver&quot;</span>: <span class="hljs-string">&quot;json-file&quot;</span>,
+  <span class="hljs-string">&quot;log-opts&quot;</span>: {
+    <span class="hljs-string">&quot;max-size&quot;</span>: <span class="hljs-string">&quot;100m&quot;</span>
+  },
+  <span class="hljs-string">&quot;storage-driver&quot;</span>: <span class="hljs-string">&quot;overlay2&quot;</span>,
+  <span class="hljs-string">&quot;storage-opts&quot;</span>: [
+    <span class="hljs-string">&quot;overlay2.override_kernel_check=true&quot;</span>
+  ]
+}
+EOF
+
+mkdir -p /etc/systemd/system/docker.service.d
+
+<span class="hljs-comment"># Restart Docker</span>
+<span class="hljs-comment"># Restart docker.</span>
+systemctl daemon-reload
+systemctl restart docker
+</code></pre>
+<ul>
+<li>Ki&#x1EC3;m tra cgroup</li>
+</ul>
+<pre><code>docker info | grep -i cgroup
+ Cgroup Driver: systemd
+</code></pre><ul>
+<li>C&#x1EA5;u h&#xEC;nh FirewallD</li>
+</ul>
+<pre><code>firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=30000-32767/tcp
+firewall-cmd --reload
+</code></pre><ul>
+<li>C&#x1EA5;u h&#xEC;nh Kubernetes Repository</li>
+</ul>
+<pre><code class="lang-bash">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+exclude=kubelet kubeadm kubectl
+EOF
+</code></pre>
+<ul>
+<li>C&#xE0;i &#x111;&#x1EB7;t kubeadm kubectl</li>
+</ul>
+<pre><code class="lang-bash">yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+
+systemctl <span class="hljs-built_in">enable</span> --now kubelet
+</code></pre>
+<ul>
+<li>Th&#x1EF1;c hi&#x1EC7;n join cluster</li>
+</ul>
+<pre><code>kubeadm join 10.10.203.33:6443 --token fda9nx.fmzacmqdvn3hmhj1 \
+    --discovery-token-ca-cert-hash sha256:750ae2309df90b3abaa526794d625fc2b6288005ff455edeb1a8c9f78607807d
+
+
+[root@worker1 ~]# kubeadm join 10.10.203.33:6443 --token fda9nx.fmzacmqdvn3hmhj1 \
+
+&gt;     --discovery-token-ca-cert-hash sha256:750ae2309df90b3abaa526794d625fc2b6288005ff455edeb1a8c9f78607807d
+&gt;
+&gt; W0405 00:45:16.555826 5508 join.go:346] [preflight] WARNING: JoinControlPane.controlPlane settings will be ignored when control-plane flag is not set.
+&gt; [preflight] Running pre-flight checks
+
+        [WARNING Service-Docker]: docker service is not enabled, please run &apos;systemctl enable docker.service&apos;
+
+[preflight] Reading configuration from the cluster...
+[preflight] FYI: You can look at this config file with &apos;kubectl -n kube-system get cm kubeadm-config -oyaml&apos;
+[kubelet-start] Downloading configuration for the kubelet from the &quot;kubelet-config-1.18&quot; ConfigMap in the kube-system namespace
+[kubelet-start] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
+[kubelet-start] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
+[kubelet-start] Starting the kubelet
+[kubelet-start] Waiting for the kubelet to perform the TLS Bootstrap...
+
+This node has joined the cluster:
+
+- Certificate signing request was sent to apiserver and a response was received.
+- The Kubelet was informed of the new secure connection details.
+
+Run &apos;kubectl get nodes&apos; on the control-plane to see this node join the cluster.
+</code></pre><h2 id="4-network-pods">4. Network Pods</h2>
+<ul>
+<li>&#x1EDE; tr&#xEA;n s&#x1EED; d&#x1EE5;ng option &#x111;&#x1EC3; s&#x1EE7; d&#x1EE5;ng Network cho c&#xE1;c Pods, tuy nhi&#xEA;n &#x111;&#x1EC3; s&#x1EED; d&#x1EE5;ng &#x111;&#x1B0;&#x1EE3;c network c&#x1EA7;n m&#x1ED9;t interface driver &#x111;&#x1EC3; qu&#x1EA3;n l&#xFD; c&#xE1;c endpoint trong K8S &#x111;&#x1B0;&#x1EE3;c g&#x1ECD;i l&#xE0; <strong><a href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/#cni" target="_blank">Container Network Interface</a> (CNI)</strong></li>
+<li>Danh s&#xE1;ch c&#xE1;c networking add-on t&#x1EA1;i &#x111;&#xE2;y : <a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy" target="_blank">https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy</a></li>
+<li>Trong tr&#x1B0;&#x1EDD;ng h&#x1EE3;p n&#xE0;y, s&#x1EBD; s&#x1EED; d&#x1EE5;ng Calio ( do ng&#x1B0;&#x1EDD;i d&#xF9;ng &#x111;&#xE1;nh gi&#xE1; ) &#x111;&#x1EC3; l&#xE0;m network add-on cho h&#x1EC7; th&#x1ED1;ng</li>
+</ul>
+<pre><code class="lang-shell">kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
+`
+</code></pre>
+<ul>
+<li>Tuy nhi&#xEA;n &#x111;&#x1EC3; th&#x1EF1;c hi&#x1EC7;n command, c&#x1EA7;n ph&#x1EA3;i th&#x1EF1;c hi&#x1EC7;n export credential</li>
+</ul>
+<pre><code class="lang-bash"><span class="hljs-built_in">export</span> KUBECONFIG=/etc/kubernetes/admin.conf
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../cloudnative/define.html" class="navigation navigation-prev " aria-label="Previous page: Define Cloud Native">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.architecture.html" class="navigation navigation-next " aria-label="Next page: Kiến trúc trong Kubernetes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Cài đặt K8S 1.18","level":"3.1","depth":1,"next":{"title":"Kiến trúc trong Kubernetes","level":"3.2","depth":1,"path":"k8s/2.architecture.md","ref":"k8s/2.architecture.md","articles":[]},"previous":{"title":"Define Cloud Native","level":"2.1","depth":1,"path":"cloudnative/define.md","ref":"cloudnative/define.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"k8s/1.Deploy.md","mtime":"2020-04-08T10:47:00.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-08T11:10:43.840Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
