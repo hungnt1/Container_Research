@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: myapp # giong ten cua service
+subsets:
+  - addresses:
+      - ip: 216.58.220.195      # đây là IP google
+    ports:
+      - port: 80

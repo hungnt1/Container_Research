@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginxsvc
+spec:
+  type: ClusterIP
+  selector:
+    name: nginxapp # selector về Pod có lable name=nginxapp
+  ports:
+  - port: 80
+    targetPort: 80

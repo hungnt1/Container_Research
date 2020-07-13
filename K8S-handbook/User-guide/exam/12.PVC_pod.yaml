@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: appvolume
+spec:
+  selector:
+    matchLabels:
+      name: appvolume
+  template:
+    metadata:
+      name: appvolume
+      labels:
+        name: appvolume
+    spec:
+      volumes:
+      # Khai báo VL sử dụng PVC
+      - name: myvolume
+        persistentVolumeClaim:
+          claimName: pvc1
+      containers:
+      - name: myapp
+        image: busybox
+        resources:
+          limits:
+            memory: "50Mi"
+            cpu: "500m"
+        command:
+          - sleep
+          - "600"
+        volumeMounts:
+        - mountPath: "/data"
+          name: myvolume

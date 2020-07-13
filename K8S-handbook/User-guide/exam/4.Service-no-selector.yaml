@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  # selector:
+  #   app: myapp
+  type: ClusterIP # tự động selector về endpoint trùng tên
+  ports:
+  - port: 80
+    targetPort: 80
