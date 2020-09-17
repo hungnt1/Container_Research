@@ -1,0 +1,774 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    scheduler.alpha.kubernetes.io/critical-pod: ""
+  creationTimestamp: "2020-07-28T03:03:38Z"
+  generateName: calico-node-
+  labels:
+    controller-revision-hash: 67fc7c498f
+    k8s-app: calico-node
+    pod-template-generation: "1"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:scheduler.alpha.kubernetes.io/critical-pod: {}
+        f:generateName: {}
+        f:labels:
+          .: {}
+          f:controller-revision-hash: {}
+          f:k8s-app: {}
+          f:pod-template-generation: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"45511895-cae5-44dc-af9a-82da9e0ce5f4"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:affinity:
+          .: {}
+          f:nodeAffinity:
+            .: {}
+            f:requiredDuringSchedulingIgnoredDuringExecution:
+              .: {}
+              f:nodeSelectorTerms: {}
+        f:containers:
+          k:{"name":"calico-node"}:
+            .: {}
+            f:env:
+              .: {}
+              k:{"name":"CALICO_DISABLE_FILE_LOGGING"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"CALICO_IPV4POOL_CIDR"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"CALICO_IPV4POOL_IPIP"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"CALICO_NETWORKING_BACKEND"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:configMapKeyRef:
+                    .: {}
+                    f:key: {}
+                    f:name: {}
+              k:{"name":"CLUSTER_TYPE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"DATASTORE_TYPE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"FELIX_DEFAULTENDPOINTTOHOSTACTION"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"FELIX_HEALTHENABLED"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"FELIX_IPINIPMTU"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:configMapKeyRef:
+                    .: {}
+                    f:key: {}
+                    f:name: {}
+              k:{"name":"FELIX_IPV6SUPPORT"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"FELIX_LOGSEVERITYSCREEN"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"IP"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"NODENAME"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"WAIT_FOR_DATASTORE"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:livenessProbe:
+              .: {}
+              f:exec:
+                .: {}
+                f:command: {}
+              f:failureThreshold: {}
+              f:initialDelaySeconds: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:name: {}
+            f:readinessProbe:
+              .: {}
+              f:exec:
+                .: {}
+                f:command: {}
+              f:failureThreshold: {}
+              f:periodSeconds: {}
+              f:successThreshold: {}
+              f:timeoutSeconds: {}
+            f:resources:
+              .: {}
+              f:requests:
+                .: {}
+                f:cpu: {}
+            f:securityContext:
+              .: {}
+              f:privileged: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/lib/modules"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+                f:readOnly: {}
+              k:{"mountPath":"/run/xtables.lock"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/lib/calico"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/run/calico"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/run/nodeagent"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+        f:dnsPolicy: {}
+        f:enableServiceLinks: {}
+        f:hostNetwork: {}
+        f:initContainers:
+          .: {}
+          k:{"name":"flexvol-driver"}:
+            .: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:securityContext:
+              .: {}
+              f:privileged: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/host/driver"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+          k:{"name":"install-cni"}:
+            .: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"CNI_CONF_NAME"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+              k:{"name":"CNI_MTU"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:configMapKeyRef:
+                    .: {}
+                    f:key: {}
+                    f:name: {}
+              k:{"name":"CNI_NETWORK_CONFIG"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:configMapKeyRef:
+                    .: {}
+                    f:key: {}
+                    f:name: {}
+              k:{"name":"KUBERNETES_NODE_NAME"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+              k:{"name":"SLEEP"}:
+                .: {}
+                f:name: {}
+                f:value: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:securityContext:
+              .: {}
+              f:privileged: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/host/etc/cni/net.d"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/host/opt/cni/bin"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+          k:{"name":"upgrade-ipam"}:
+            .: {}
+            f:command: {}
+            f:env:
+              .: {}
+              k:{"name":"CALICO_NETWORKING_BACKEND"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:configMapKeyRef:
+                    .: {}
+                    f:key: {}
+                    f:name: {}
+              k:{"name":"KUBERNETES_NODE_NAME"}:
+                .: {}
+                f:name: {}
+                f:valueFrom:
+                  .: {}
+                  f:fieldRef:
+                    .: {}
+                    f:apiVersion: {}
+                    f:fieldPath: {}
+            f:image: {}
+            f:imagePullPolicy: {}
+            f:name: {}
+            f:resources: {}
+            f:securityContext:
+              .: {}
+              f:privileged: {}
+            f:terminationMessagePath: {}
+            f:terminationMessagePolicy: {}
+            f:volumeMounts:
+              .: {}
+              k:{"mountPath":"/host/opt/cni/bin"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+              k:{"mountPath":"/var/lib/cni/networks"}:
+                .: {}
+                f:mountPath: {}
+                f:name: {}
+        f:nodeSelector:
+          .: {}
+          f:beta.kubernetes.io/os: {}
+        f:priorityClassName: {}
+        f:restartPolicy: {}
+        f:schedulerName: {}
+        f:securityContext: {}
+        f:serviceAccount: {}
+        f:serviceAccountName: {}
+        f:terminationGracePeriodSeconds: {}
+        f:tolerations: {}
+        f:volumes:
+          .: {}
+          k:{"name":"cni-bin-dir"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"cni-net-dir"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"flexvol-driver-host"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"host-local-net-dir"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"lib-modules"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"policysync"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"var-lib-calico"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"var-run-calico"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+          k:{"name":"xtables-lock"}:
+            .: {}
+            f:hostPath:
+              .: {}
+              f:path: {}
+              f:type: {}
+            f:name: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2020-07-28T03:03:38Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:conditions:
+          k:{"type":"ContainersReady"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Initialized"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Ready"}:
+            .: {}
+            f:lastProbeTime: {}
+            f:lastTransitionTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:containerStatuses: {}
+        f:hostIP: {}
+        f:initContainerStatuses: {}
+        f:phase: {}
+        f:podIP: {}
+        f:podIPs:
+          .: {}
+          k:{"ip":"103.226.250.14"}:
+            .: {}
+            f:ip: {}
+        f:startTime: {}
+    manager: kubelet
+    operation: Update
+    time: "2020-07-28T03:03:46Z"
+  name: calico-node-chnc8
+  namespace: kube-system
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: DaemonSet
+    name: calico-node
+    uid: 45511895-cae5-44dc-af9a-82da9e0ce5f4
+  resourceVersion: "1061466"
+  selfLink: /api/v1/namespaces/kube-system/pods/calico-node-chnc8
+  uid: 3b705a27-553e-4caf-8bdf-a692156dfc81
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchFields:
+          - key: metadata.name
+            operator: In
+            values:
+            - centos7
+  containers:
+  - env:
+    - name: DATASTORE_TYPE
+      value: kubernetes
+    - name: WAIT_FOR_DATASTORE
+      value: "true"
+    - name: NODENAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.nodeName
+    - name: CALICO_NETWORKING_BACKEND
+      valueFrom:
+        configMapKeyRef:
+          key: calico_backend
+          name: calico-config
+    - name: CLUSTER_TYPE
+      value: k8s,bgp
+    - name: IP
+      value: autodetect
+    - name: CALICO_IPV4POOL_IPIP
+      value: Always
+    - name: FELIX_IPINIPMTU
+      valueFrom:
+        configMapKeyRef:
+          key: veth_mtu
+          name: calico-config
+    - name: CALICO_IPV4POOL_CIDR
+      value: 192.168.0.0/16
+    - name: CALICO_DISABLE_FILE_LOGGING
+      value: "true"
+    - name: FELIX_DEFAULTENDPOINTTOHOSTACTION
+      value: ACCEPT
+    - name: FELIX_IPV6SUPPORT
+      value: "false"
+    - name: FELIX_LOGSEVERITYSCREEN
+      value: info
+    - name: FELIX_HEALTHENABLED
+      value: "true"
+    image: calico/node:v3.11.3
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      exec:
+        command:
+        - /bin/calico-node
+        - -felix-live
+        - -bird-live
+      failureThreshold: 6
+      initialDelaySeconds: 10
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    name: calico-node
+    readinessProbe:
+      exec:
+        command:
+        - /bin/calico-node
+        - -felix-ready
+        - -bird-ready
+      failureThreshold: 3
+      periodSeconds: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    resources:
+      requests:
+        cpu: 250m
+    securityContext:
+      privileged: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /lib/modules
+      name: lib-modules
+      readOnly: true
+    - mountPath: /run/xtables.lock
+      name: xtables-lock
+    - mountPath: /var/run/calico
+      name: var-run-calico
+    - mountPath: /var/lib/calico
+      name: var-lib-calico
+    - mountPath: /var/run/nodeagent
+      name: policysync
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: calico-node-token-hdfh5
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  hostNetwork: true
+  initContainers:
+  - command:
+    - /opt/cni/bin/calico-ipam
+    - -upgrade
+    env:
+    - name: KUBERNETES_NODE_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.nodeName
+    - name: CALICO_NETWORKING_BACKEND
+      valueFrom:
+        configMapKeyRef:
+          key: calico_backend
+          name: calico-config
+    image: calico/cni:v3.11.3
+    imagePullPolicy: IfNotPresent
+    name: upgrade-ipam
+    resources: {}
+    securityContext:
+      privileged: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/lib/cni/networks
+      name: host-local-net-dir
+    - mountPath: /host/opt/cni/bin
+      name: cni-bin-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: calico-node-token-hdfh5
+      readOnly: true
+  - command:
+    - /install-cni.sh
+    env:
+    - name: CNI_CONF_NAME
+      value: 10-calico.conflist
+    - name: CNI_NETWORK_CONFIG
+      valueFrom:
+        configMapKeyRef:
+          key: cni_network_config
+          name: calico-config
+    - name: KUBERNETES_NODE_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: spec.nodeName
+    - name: CNI_MTU
+      valueFrom:
+        configMapKeyRef:
+          key: veth_mtu
+          name: calico-config
+    - name: SLEEP
+      value: "false"
+    image: calico/cni:v3.11.3
+    imagePullPolicy: IfNotPresent
+    name: install-cni
+    resources: {}
+    securityContext:
+      privileged: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /host/opt/cni/bin
+      name: cni-bin-dir
+    - mountPath: /host/etc/cni/net.d
+      name: cni-net-dir
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: calico-node-token-hdfh5
+      readOnly: true
+  - image: calico/pod2daemon-flexvol:v3.11.3
+    imagePullPolicy: IfNotPresent
+    name: flexvol-driver
+    resources: {}
+    securityContext:
+      privileged: true
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /host/driver
+      name: flexvol-driver-host
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: calico-node-token-hdfh5
+      readOnly: true
+  nodeName: centos7
+  nodeSelector:
+    beta.kubernetes.io/os: linux
+  priority: 2000001000
+  priorityClassName: system-node-critical
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: calico-node
+  serviceAccountName: calico-node
+  terminationGracePeriodSeconds: 0
+  tolerations:
+  - effect: NoSchedule
+    operator: Exists
+  - key: CriticalAddonsOnly
+    operator: Exists
+  - effect: NoExecute
+    operator: Exists
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/disk-pressure
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/memory-pressure
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/pid-pressure
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/unschedulable
+    operator: Exists
+  - effect: NoSchedule
+    key: node.kubernetes.io/network-unavailable
+    operator: Exists
+  volumes:
+  - hostPath:
+      path: /lib/modules
+      type: ""
+    name: lib-modules
+  - hostPath:
+      path: /var/run/calico
+      type: ""
+    name: var-run-calico
+  - hostPath:
+      path: /var/lib/calico
+      type: ""
+    name: var-lib-calico
+  - hostPath:
+      path: /run/xtables.lock
+      type: FileOrCreate
+    name: xtables-lock
+  - hostPath:
+      path: /opt/cni/bin
+      type: ""
+    name: cni-bin-dir
+  - hostPath:
+      path: /etc/cni/net.d
+      type: ""
+    name: cni-net-dir
+  - hostPath:
+      path: /var/lib/cni/networks
+      type: ""
+    name: host-local-net-dir
+  - hostPath:
+      path: /var/run/nodeagent
+      type: DirectoryOrCreate
+    name: policysync
+  - hostPath:
+      path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec/nodeagent~uds
+      type: DirectoryOrCreate
+    name: flexvol-driver-host
+  - name: calico-node-token-hdfh5
+    secret:
+      defaultMode: 420
+      secretName: calico-node-token-hdfh5
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2020-07-28T03:03:45Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2020-07-28T03:03:38Z"
+    message: 'containers with unready status: [calico-node]'
+    reason: ContainersNotReady
+    status: "False"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2020-07-28T03:03:38Z"
+    message: 'containers with unready status: [calico-node]'
+    reason: ContainersNotReady
+    status: "False"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2020-07-28T03:03:38Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://0652ac904bdc5ac601f808803db024c827c7415694213d7a5f32b0bb517b79e1
+    image: calico/node:v3.11.3
+    imageID: docker-pullable://calico/node@sha256:319813e29578c1eb9401a426ae6d8549f3b8963ae97ccff0d8aea57b8406ec8d
+    lastState: {}
+    name: calico-node
+    ready: false
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2020-07-28T03:03:45Z"
+  hostIP: 103.226.250.14
+  initContainerStatuses:
+  - containerID: docker://1199c49d080f8134f879f005920965f461554ea981c32207f71a3eb9e42d5623
+    image: calico/cni:v3.11.3
+    imageID: docker-pullable://calico/cni@sha256:29a4a6b90a2e840e763625306e81357405ebfc9ee7c69c3fbe6519f2c427e42f
+    lastState: {}
+    name: upgrade-ipam
+    ready: true
+    restartCount: 0
+    state:
+      terminated:
+        containerID: docker://1199c49d080f8134f879f005920965f461554ea981c32207f71a3eb9e42d5623
+        exitCode: 0
+        finishedAt: "2020-07-28T03:03:40Z"
+        reason: Completed
+        startedAt: "2020-07-28T03:03:40Z"
+  - containerID: docker://5d02992fdf4ebbb4969e0b492437be70ba0b2cb370ebe879c7ce24526183f715
+    image: calico/cni:v3.11.3
+    imageID: docker-pullable://calico/cni@sha256:29a4a6b90a2e840e763625306e81357405ebfc9ee7c69c3fbe6519f2c427e42f
+    lastState: {}
+    name: install-cni
+    ready: true
+    restartCount: 0
+    state:
+      terminated:
+        containerID: docker://5d02992fdf4ebbb4969e0b492437be70ba0b2cb370ebe879c7ce24526183f715
+        exitCode: 0
+        finishedAt: "2020-07-28T03:03:43Z"
+        reason: Completed
+        startedAt: "2020-07-28T03:03:42Z"
+  - containerID: docker://00dea6b5f93f9fafe873ce84855967fd1733359da40d321c291a2273dc321fbf
+    image: calico/pod2daemon-flexvol:v3.11.3
+    imageID: docker-pullable://calico/pod2daemon-flexvol@sha256:a26d85e1233fb7dd9e63826f88ac9cb32cfd5dd0b0963e201e4ad9d6eb979088
+    lastState: {}
+    name: flexvol-driver
+    ready: true
+    restartCount: 0
+    state:
+      terminated:
+        containerID: docker://00dea6b5f93f9fafe873ce84855967fd1733359da40d321c291a2273dc321fbf
+        exitCode: 0
+        finishedAt: "2020-07-28T03:03:44Z"
+        reason: Completed
+        startedAt: "2020-07-28T03:03:44Z"
+  phase: Running
+  podIP: 103.226.250.14
+  podIPs:
+  - ip: 103.226.250.14
+  qosClass: Burstable
+  startTime: "2020-07-28T03:03:38Z"
